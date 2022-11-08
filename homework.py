@@ -20,6 +20,7 @@ class InfoMessage:
         """Метод возвращает строку сообщения"""
         return self.messages.format(**asdict(self))
 
+
 @dataclass
 class Training:
     """Базовый класс тренировки."""
