@@ -1,4 +1,5 @@
 from dataclasses import dataclass, asdict
+from typing import List, Dict, Type
 
 
 @dataclass
@@ -127,12 +128,12 @@ class Swimming(Training):
         return self.action * self.LEN_STEP / self.M_IN_KM
 
 
-def read_package(workout_type: str, data: list[str]) -> Training:
+def read_package(workout_type: str, data: List[str]) -> Training:
     """Прочитать данные полученные от датчиков."""
-    training_info = {
+    training_info: Dict[str, Type[Training]] = {
         'SWM': Swimming,
         'RUN': Running,
-        'WLK': SportsWalking,
+        'WLK': SportsWalking
     }
 
     if workout_type not in training_info:
