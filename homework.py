@@ -128,7 +128,7 @@ class Swimming(Training):
         return self.action * self.LEN_STEP / self.M_IN_KM
 
 
-def read_package(workout_type: str, data: List[str]) -> Training:
+def read_package(workout_type: str, data: List[float]) -> Training:
     """Прочитать данные полученные от датчиков."""
     training_info: Dict[str, Type[Training]] = {
         'SWM': Swimming,
